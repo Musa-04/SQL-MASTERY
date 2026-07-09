@@ -37,3 +37,39 @@
 -- Highest age per city
 
 -- Lowest age per city
+
+-- ==========================================
+-- EXTRA PRACTICE (with solutions)
+-- ==========================================
+
+-- Q13
+-- Show department name and total salary,
+-- only for departments with more than 3 employees
+
+-- SOLUTION:
+SELECT department,
+       SUM(salary) AS total_salary
+FROM employees
+GROUP BY department
+HAVING COUNT(*) > 3;
+
+-- Q14
+-- Find the department with the highest average salary
+
+-- SOLUTION:
+SELECT department,
+       AVG(salary) AS avg_salary
+FROM employees
+GROUP BY department
+ORDER BY avg_salary DESC
+LIMIT 1;
+
+-- Q15
+-- Count how many employees earn above 50000 per department
+
+-- SOLUTION:
+SELECT department,
+       COUNT(*) AS high_earners
+FROM employees
+WHERE salary > 50000
+GROUP BY department;

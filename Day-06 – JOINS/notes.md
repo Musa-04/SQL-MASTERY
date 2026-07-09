@@ -120,3 +120,41 @@ LEFT JOIN   → Left table + Matching right
 RIGHT JOIN  → Right table + Matching left
 FULL JOIN   → Left + Right + Common
 ```
+
+---
+
+## Interview Q&A
+
+**Q: What is a JOIN in SQL?**
+> A JOIN combines rows from two or more tables based on a related column between them (usually a Primary Key–Foreign Key relationship).
+
+**Q: What is the difference between INNER JOIN and LEFT JOIN?**
+> `INNER JOIN` returns only matching rows from both tables. `LEFT JOIN` returns all rows from the left table plus matched rows from the right — unmatched rows show `NULL` for right-side columns.
+
+**Q: Does MySQL support FULL OUTER JOIN?**
+> No. MySQL does not natively support `FULL OUTER JOIN`. You simulate it using `LEFT JOIN UNION RIGHT JOIN`.
+
+**Q: What is a SELF JOIN?**
+> A `SELF JOIN` joins a table to itself. Commonly used for hierarchical data, like finding an employee's manager when both are stored in the same `employees` table.
+
+**Q: What is a CROSS JOIN?**
+> A `CROSS JOIN` returns the Cartesian product — every row from Table A paired with every row from Table B. If A has 3 rows and B has 4 rows, the result has 12 rows.
+
+**Q: When would you use a RIGHT JOIN over a LEFT JOIN?**
+> They are functionally identical — you can always rewrite a `RIGHT JOIN` as a `LEFT JOIN` by swapping the tables. `LEFT JOIN` is preferred by convention for readability.
+
+---
+
+## Extra Example
+
+```sql
+-- 3-table JOIN: students enrolled in a course with grade
+SELECT s.name         AS student,
+       c.course_name  AS course,
+       e.grade        AS grade
+FROM students s
+INNER JOIN enrollments e ON s.id = e.student_id
+INNER JOIN courses c     ON e.course_id = c.id
+WHERE e.grade >= 'B'
+ORDER BY s.name;
+```

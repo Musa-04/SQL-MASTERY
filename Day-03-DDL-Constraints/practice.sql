@@ -52,3 +52,33 @@
 -- BONUS
 
 -- Create Syncher Users Table
+
+-- ==========================================
+-- EXTRA PRACTICE (with solutions)
+-- ==========================================
+
+-- Q11
+-- Add a column 'phone VARCHAR(15)' to the students table
+
+-- SOLUTION:
+ALTER TABLE students
+ADD phone VARCHAR(15);
+
+-- Q12
+-- Change the 'city' column size to VARCHAR(100)
+
+-- SOLUTION:
+ALTER TABLE students
+MODIFY COLUMN city VARCHAR(100);
+
+-- Q13
+-- Create an orders table with a FOREIGN KEY to students
+
+-- SOLUTION:
+CREATE TABLE orders (
+    order_id   INT PRIMARY KEY,
+    student_id INT NOT NULL,
+    item       VARCHAR(100),
+    amount     DECIMAL(10,2),
+    FOREIGN KEY (student_id) REFERENCES students(student_id)
+);

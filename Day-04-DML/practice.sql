@@ -35,3 +35,29 @@
 -- Delete one employee
 
 -- Display final result
+
+-- ==========================================
+-- EXTRA PRACTICE (with solutions)
+-- ==========================================
+
+-- Q11
+-- Insert a new student with only id and name (leave others NULL)
+
+-- SOLUTION:
+INSERT INTO students (id, name)
+VALUES (10, 'Musa');
+
+-- Q12
+-- Increase salary by 15% for all employees in 'Sales' department
+
+-- SOLUTION:
+UPDATE employees
+SET salary = salary * 1.15
+WHERE department = 'Sales';
+
+-- Q13
+-- Delete all employees who have NULL in the city column
+
+-- SOLUTION:
+DELETE FROM employees
+WHERE city IS NULL;

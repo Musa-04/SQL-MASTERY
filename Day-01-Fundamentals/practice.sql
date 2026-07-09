@@ -44,3 +44,34 @@
 
 -- Q10
 -- Display only product names
+
+-- ==========================================
+-- EXTRA PRACTICE (with solutions)
+-- ==========================================
+
+-- Q11
+-- Display only employee name and department
+
+-- SOLUTION:
+SELECT name, department FROM employees;
+
+-- Q12
+-- Show the structure of the students table
+
+-- SOLUTION:
+DESCRIBE students;
+
+-- Q13
+-- Create a database named school_db, use it,
+-- then create a table named teachers with:
+-- teacher_id INT, teacher_name VARCHAR(100), subject VARCHAR(50)
+
+-- SOLUTION:
+CREATE DATABASE school_db;
+USE school_db;
+
+CREATE TABLE teachers (
+    teacher_id   INT,
+    teacher_name VARCHAR(100),
+    subject      VARCHAR(50)
+);
