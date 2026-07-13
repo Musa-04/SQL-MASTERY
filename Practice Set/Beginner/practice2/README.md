@@ -16,6 +16,7 @@ A collection of **60 SQL questions** designed to build and test your SQL skills 
 
 ## 🗂️ Table Structure
 
+
 All questions are based on a single table called `students`:
 
 ```sql
