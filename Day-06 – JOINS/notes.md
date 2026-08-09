@@ -8,8 +8,8 @@ Returns **only matching rows** from both tables.
 
 ```sql
 SELECT *
-FROM customersl c
-INNER JOIN ordersl o
+FROM customers c
+INNER JOIN orders o
 ON c.Customer_id = o.Customer_id;
 ```
 
@@ -24,8 +24,8 @@ Unmatched right-side columns show `NULL`.
 
 ```sql
 SELECT *
-FROM customersl c
-LEFT JOIN ordersl o
+FROM customers c
+LEFT JOIN orders o
 ON c.Customer_id = o.Customer_id;
 ```
 
@@ -40,8 +40,8 @@ Unmatched left-side columns show `NULL`.
 
 ```sql
 SELECT *
-FROM customersl c
-RIGHT JOIN ordersl o
+FROM customers c
+RIGHT JOIN orders o
 ON c.Customer_id = o.Customer_id;
 ```
 
@@ -58,15 +58,15 @@ Unmatched rows from either side show `NULL` for the other side's columns.
 
 ```sql
 SELECT *
-FROM customersl c
-LEFT JOIN ordersl o
+FROM customers c
+LEFT JOIN orders o
 ON c.Customer_id = o.Customer_id
 
 UNION
 
 SELECT *
-FROM customersl c
-RIGHT JOIN ordersl o
+FROM customers c
+RIGHT JOIN orders o
 ON c.Customer_id = o.Customer_id;
 ```
 
